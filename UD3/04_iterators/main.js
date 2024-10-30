@@ -42,7 +42,6 @@ function totalFaction(faction) {
 function avgYears(faction) {
 }
 
-// use console.log
 iterateSimple()
 iterateForEach()
 try {
