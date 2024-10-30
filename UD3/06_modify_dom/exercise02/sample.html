@@ -2,32 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>DOM básico</title>
-<script type="text/javascript">
-    window.onload = function() {
-        // Número de enlaces de la página
-        let enlaces = document.getElementsByTagName("a");
-        console.log("Número de enlaces en la página:", enlaces.length);
-    
-        // Dirección del penúltimo enlace
-        if (enlaces.length >= 2) {
-            console.log("Dirección del penúltimo enlace:", enlaces[enlaces.length - 2].href);
-        }
-    
-        // Número de enlaces que apuntan a http://prueba
-        let contadorPrueba = 0;
-        for (let i = 0; i < enlaces.length; i++) {
-            if (enlaces[i].href === "http://prueba/") {
-                contadorPrueba++;
-            }
-        }
-        console.log("Número de enlaces que apuntan a http://prueba:", contadorPrueba);
-    
-        // Número de enlaces en el tercer párrafo
-        let tercerParrafo = document.getElementsByTagName("p")[2];
-        let enlacesTercerParrafo = tercerParrafo.getElementsByTagName("a").length;
-        console.log("Número de enlaces en el tercer párrafo:", enlacesTercerParrafo);
-    }
-    </script>
 </head>
 <body>
 <p>Lorem ipsum dolor sit amet, <a href="http://prueba/">consectetuer adipiscing elit</a>.
@@ -68,4 +42,27 @@ hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a
 vestibulum nisl mi at odio. <a href="http://prueba5/">Sed non lectus non est pellentesque</a> auctor.</p>
 
 
-</body></html>
+</body>
+<script type="text/javascript">
+    window.onload = function() {
+        let enlaces = document.getElementsByTagName("a");
+        console.log("Número de enlaces en la página:", enlaces.length);
+    
+        if (enlaces.length >= 2) {
+            console.log("Dirección del penúltimo enlace:", enlaces[enlaces.length - 2].href);
+        }
+    
+        let contadorPrueba = 0;
+        for (let i = 0; i < enlaces.length; i++) {
+            if (enlaces[i].href === "http://prueba/") {
+                contadorPrueba++;
+            }
+        }
+        console.log("Número de enlaces que apuntan a http://prueba:", contadorPrueba);
+    
+        let tercerParrafo = document.getElementsByTagName("p")[2];
+        let enlacesTercerParrafo = tercerParrafo.getElementsByTagName("a").length;
+        console.log("Número de enlaces en el tercer párrafo:", enlacesTercerParrafo);
+    }
+    </script>
+</html>
