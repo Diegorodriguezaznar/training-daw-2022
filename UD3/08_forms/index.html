@@ -1,47 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <title>Formulario con validaciones</title>
+    <style>
+        .error {
+            color: red;
+        }
+        button:disabled {
+            background-color: #ccc;
+        }
+    </style>
 </head>
 <body>
-    <form name="main_form">
-        <p>
-            <input type="radio" value="si" name="pregunta" id="pregunta_si">SI</input>
-            <input type="radio" value="no" name="pregunta" id="pregunta_no">NO</input>
-            <input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc">NS/NC</input>
-        </p>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
 
-        <p>
-            <select id="opciones" name="opciones">
-                <option value="1">Primer valor</option>
-                <option value="2">Segundo valor</option>
-                <option value="3">Tercer valor</option>
-                <option value="4">Cuarto valor</option>
-            </select>
-        </p>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <br><br>
 
-        <p>
-            <label for="name">Nombre: </label>
-            <input type="text" name="name"></input>
-            <label for="surname">Apellidos: </label>
-            <input type="text" name="surname"></input>
-            <label for="description">Descripción: </label>
-            <textarea type="textarea" name="description"></textarea>
-        </p>
+        <p>¿Desea activar opciones?</p>
+        <input type="radio" id="activarSi" name="activarOpciones" value="si">
+        <label for="activarSi">Sí</label>
+        <input type="radio" id="activarNo" name="activarOpciones" value="no" checked>
+        <label for="activarNo">No</label>
+        <br><br>
 
-        <p>
-            <input type="checkbox" value="condiciones" name="condiciones" id="condiciones">He leído y acepto las condiciones</input>
-            <input type="checkbox" value="privacidad" name="privacidad" id="privacidad">He leído la política de privacidad</input>
-        </p>
+        <input type="checkbox" id="check2">
+        <label for="check2">Confirmar términos y condiciones</label>
+        <br><br>
 
-        <p>
-            <button id="submit">Enviar</button>
-        </p>
+        <label for="combo">Seleccionar opción:</label>
+        <select id="combo" disabled>
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+        </select>
+        <br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" maxlength="80"></textarea>
+        <span id="contador"></span>
+        <br><br>
+
+        <button type="submit" id="enviar" disabled>Enviar</button>
+        <p id="mensajeError" class="error"></p>
     </form>
+
+    <script src="./main.js"></script>
 </body>
 </html>

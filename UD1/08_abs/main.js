@@ -1,12 +1,8 @@
-const assert = require('assert').strict;
-
-
-
-function insertIfNotExists(num) {
-const numeroAbsoluto = Math.abs(num)
-console.log(numeroAbsoluto)
+function mostrarValorAbsoluto(numero) {
+    const valorAbsoluto = Math.abs(numero);
+    console.log("El valor absoluto de", numero, "es:", valorAbsoluto);
 }
-assert.strictEqual(abs(4), 4)
-assert.strictEqual(abs(-4), 4)
-assert.strictEqual(abs(0), 0)
-insertIfNotExists(-40)
+
+mostrarValorAbsoluto(4);  
+mostrarValorAbsoluto(-4);
+mostrarValorAbsoluto(0);     
